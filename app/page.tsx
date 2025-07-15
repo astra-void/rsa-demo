@@ -61,7 +61,7 @@ export default function Home() {
       data
     );
     setDecrypted(new TextDecoder().decode(decryptedBuffer));
-  };
+    };
 
   return (
     <div className="p-8">
@@ -76,10 +76,14 @@ export default function Home() {
       </section>
       {privateKeyJwk?.p && privateKeyJwk?.q && (
         <section className="mb-6">
-          <h2 className="text-xl">RSA Prime Factors</h2>
+          <h2 className="text-xl">Numbers</h2>
           <div className="text-sm overflow-auto max-h-40 p-2 border rounded font-mono">
             <p><strong>p:</strong> {base64urlToBigInt(privateKeyJwk.p).toString()}</p>
             <p><strong>q:</strong> {base64urlToBigInt(privateKeyJwk.q).toString()}</p>
+            <p><strong>public n:</strong> {base64urlToBigInt(publicKeyJwk.n).toString()}</p>
+            <p><strong>private n:</strong> {base64urlToBigInt(privateKeyJwk.n).toString()}</p>
+            <p><strong>d:</strong> {base64urlToBigInt(privateKeyJwk.d).toString()}</p>
+            <p><strong>e:</strong> {base64urlToBigInt(privateKeyJwk.e).toString()}</p>
           </div>
         </section>
       )}
