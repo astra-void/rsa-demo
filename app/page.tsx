@@ -77,7 +77,7 @@ export default function Home() {
       {privateKeyJwk?.p && privateKeyJwk?.q && (
         <section className="mb-6">
           <h2 className="text-xl">Numbers</h2>
-          <div className="text-sm overflow-auto max-h-40 p-2 border rounded font-mono">
+          <div className="text-sm overflow-auto max-h-80 p-2 border rounded font-mono">
             <p><strong>p:</strong> {base64urlToBigInt(privateKeyJwk.p).toString()}</p>
             <p><strong>q:</strong> {base64urlToBigInt(privateKeyJwk.q).toString()}</p>
             <p><strong>public n:</strong> {base64urlToBigInt(publicKeyJwk.n).toString()}</p>
